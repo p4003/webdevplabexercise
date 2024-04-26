@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JavaJam Coffee House Jobs</title>
+        <link rel="stylesheet" href="javajam.css">
+    </head>
+    <body>
+        <div id="wrapper">
+            <header>
+                <h1>JavaJam Coffee House</h1>
+            </header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="music.html">Music</a></li>
+                    <li><a href="jobs.html">Jobs</a></li>
+                </ul>
+            </nav>
+            <main>
+                <div id="herojobs"></div>
+                <h2>Jobs at JavaJam</h2>
+                <p>
+                    Want to work at JavaJam? Fill out the form below to start your application.
+                </p>
+                <form action="jobsreturnvalue2.html">
+                    <label for="myName">*Name: </label>
+                    <input type="text" id="myName" name="myName" required>
+                    <label for="myEmail">*E-mail: </label>
+                    <input type="email" id="myEmail" name="myEmail" required>
+                    <label for="myExperience">*Experience: </label>
+                    <textarea name="myExperience" id="myExperience" rows="2" cols="20" required></textarea>
+                    <input type="submit" value="Apply Now" id="mySubmit"  onclick="getData()">
+                </form>
+                <!-- https://stackoverflow.com/questions/14693758/passing-form-data-to-another-html-page -->
+                <script>
+                    function getData()
+                        {
+                            //getting the values
+                            var name1 = document.getElementById("myName").value;
+                            var email1 = document.getElementById("myEmail").value;
+                            var exp1 = document.getElementById("myExperience").value;
+                            //saving the values in local storage
+                            localStorage.setItem("txtValue", name1);
+                            localStorage.setItem("txtValue1", email1);
+                            localStorage.setItem("txtValue2", exp1);
+                        }
+                </script>
+            </main>
+            <br>
+            <footer>
+                Copyright © 2018 JavaJam Coffee House<br>
+                <a href="mailto:yourname@email.com">yourname@email.com</a>
+            </footer>
+        </div>
+    </body>
+</html>
